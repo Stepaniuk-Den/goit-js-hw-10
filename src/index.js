@@ -38,6 +38,7 @@ function handlerClick(evt) {
 }
 
 function createOptions() {
+  refs.select.hidden = true;
   fetchBreeds()
     .then(data => {
       refs.select.innerHTML = data
@@ -64,6 +65,7 @@ function createOptions() {
     .finally(() => {
       refs.error.hidden = true;
       refs.loader.hidden = true;
+      refs.select.hidden = false;
     });
 }
 createOptions();
